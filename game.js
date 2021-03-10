@@ -7,7 +7,7 @@ const gameBoard = document.getElementById('game-board');
 function main(currentTime) {
     if(isDead()) {
         if(confirm('You Lose. Press OK to restart.'))
-            window.location = '/';
+            window.location = window.location.href;
         return;
     }
     window.requestAnimationFrame(main);
