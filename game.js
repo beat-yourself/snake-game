@@ -1,5 +1,5 @@
 import { SNAKE_SPEED, draw as drawSnake, update as updateSnake, getSnakeHead, snakeIntersection } from "./snake.js";
-import { update as updateFood, draw as drawFood } from './food.js'
+import { update as updateFood, draw as drawFood, GRID_SIZE } from './food.js'
 
 let lastRenderTime = 0;
 const gameBoard = document.getElementById('game-board');
@@ -29,5 +29,5 @@ function isDead() {
 }
 
 function outsideGrid(pos) {
-    return pos.x < 1 || pos.x > 21 || pos.y < 1 || pos.y > 21;
+    return pos.x < 1 || pos.x > GRID_SIZE || pos.y < 1 || pos.y > GRID_SIZE;
 }

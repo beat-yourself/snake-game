@@ -1,8 +1,8 @@
 import { onSnake, expandSnake } from './snake.js';
 
+export const GRID_SIZE = 21;
 let food = getRandomFood();
 const EXPANSION_RATE = 1;
-
 
 export function update() {
     if(onSnake(food)){
@@ -23,8 +23,8 @@ function getRandomFood() {
     let randomFood;
     while (randomFood == null || onSnake(randomFood)) {
         randomFood = {
-            x: Math.floor(Math.random() * 21) + 1,
-            y: Math.floor(Math.random() * 21) + 1
+            x: Math.floor(Math.random() * GRID_SIZE) + 1,
+            y: Math.floor(Math.random() * GRID_SIZE) + 1
         }
     }
     return randomFood;
