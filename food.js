@@ -1,6 +1,6 @@
 import { onSnake, expandSnake } from './snake.js';
 
-export const GRID_SIZE = 21;
+export const GRID_SIZE = 31 ;
 let food = getRandomFood();
 const EXPANSION_RATE = 1;
 
@@ -11,12 +11,16 @@ export function update() {
     }
 }
 
-export function draw(gameBoard) {
+export function draw(gameBoard, theme) {
     const foodElement = document.createElement('div');
     foodElement.style.gridRowStart = food.y;
     foodElement.style.gridColumnStart = food.x;
     foodElement.classList.add('food');
     gameBoard.appendChild(foodElement);
+    if(theme) {
+        foodElement.style.background = 'rgb(0, 60, 255)';
+        foodElement.style.border = '.25vmin black solid';
+    }
 }
 
 function getRandomFood() {

@@ -1,5 +1,5 @@
 body {
-    background: black;
+    background: #264653;
     height: 100vh;
     width: 100vw;
     display: flex;
@@ -9,20 +9,60 @@ body {
 }
 
 #game-board {
-    background-color: #ccc;
-    height: 100vmin;
-    width: 100vmin;
+    background-color: rgb(5, 3, 3);
+    height: 90vmin;
+    width: 90vmin;
     display: grid;
-    grid-template: repeat(21, 1fr) / repeat(21, 1fr);
+    grid-template: repeat(31, 1fr) / repeat(31, 1fr);
 }
 
 .snake {
-    background-color: rgb(165, 184, 60);
-    border: .25vmin black solid;
+    background-color: greenyellow;
+    border-radius: 42%;
 }
 
 .food {
-    background-color: rgb(0, 60, 255);
-    border: .25vmin black solid;
+    background-color: red;
     border-radius: 50%;
+}
+
+.toggle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #eb888b;
+    margin: 2vmin;
+    padding: 3vmin;
+    border-radius: 1vmin;
+}
+
+.toggle-btn {
+    width: 8vmin;
+    height: 4vmin;
+    background-color: grey;
+    border-radius: 4vmin;
+    padding: .8vmin;
+    margin: 2vmin 0;
+}
+
+.toggle-text {
+    color: black;
+    font-size: 3vmin;
+}
+
+.toggle-circle {
+    background-color: white;
+    width: 4vmin;
+    height: 4vmin;
+    border-radius: 4vmin;
+    transition: all 200ms;
+}
+
+.toggled {
+    transform: translateX(4vmin);
+    background-color: #333;
+}
+
+.unselected {
+    opacity: 0.25;
 }
